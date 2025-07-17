@@ -122,6 +122,7 @@ async function processThumbnails() {
                 video.thumbnail.startsWith('http')
             );
         } catch (error) {
+            console.error(`[WARN] video ${video.id} (${video.title}). Mencoba fallback. Error: ${error.message}`);
         }
 
         // --- Attempt 2: If original failed and it's a Doodcdn URL, try the opposite type ---
